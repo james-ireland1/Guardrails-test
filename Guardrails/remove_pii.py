@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def apply_guardrail(text):
+def apply_guardrail(text, guardrail_id, guardrail_version):
     bedrock_runtime = boto3.client(
         'bedrock-runtime',
         aws_access_key_id=os.getenv("ACCESS_KEY"),
@@ -14,8 +14,8 @@ def apply_guardrail(text):
         region_name='eu-north-1')
     try:
         response = bedrock_runtime.apply_guardrail(
-            guardrailIdentifier='43jbbow7bayq',
-            guardrailVersion='DRAFT',
+            guardrailIdentifier=guardrail_id,
+            guardrailVersion=guardrail_version,
             source='INPUT',
             content=[
                 {
@@ -35,9 +35,11 @@ def apply_guardrail(text):
         raise err
 
 def remove_pii(text):
-    apply_guardrail(text)
+    guardrail_id = '43jbbow7bayq',
+    guardrail_version = 'DRAFT',
+    return apply_guardrail(text, guardrail_id, guardrail_version)
 
 
 test_text = 'My name is James. I work for Softwire at 62-64 Hills Road, Cambridge, CB2 1LA. My phone number is 07382594632 and my email address is james.ireland@softwire.com. You can also reach me on james.ireland at softwire.com. I log in using jamireadmin and use fhGtjdH4897 as my password.'
 
-apply_guardrail(test_text)
+print(remove_pii(test_text))
