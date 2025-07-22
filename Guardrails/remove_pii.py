@@ -1,3 +1,4 @@
+from datetime import datetime
 import boto3
 import botocore
 import json
@@ -7,6 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def apply_guardrail(text, guardrail_id, guardrail_version):
+    start = datetime.now()
     bedrock_runtime = boto3.client(
         'bedrock-runtime',
         aws_access_key_id=os.getenv("ACCESS_KEY"),
@@ -27,16 +29,18 @@ def apply_guardrail(text, guardrail_id, guardrail_version):
             ],
             outputScope='INTERVENTIONS'
         )
+        end = datetime.now()
         print('Successfully applied guardrail with details:')
         print(json.dumps(response, indent=2))
+        print(f'Time taken: {end - start}')
         return response['outputs'][0]['text']
     except botocore.exceptions.ClientError as err:
         print('Failed while calling ApplyGuardrail API with RequestId = ' + err.response['ResponseMetadata']['RequestId'])
         raise err
 
 def remove_pii(text):
-    guardrail_id = '43jbbow7bayq',
-    guardrail_version = 'DRAFT',
+    guardrail_id = '43jbbow7bayq'
+    guardrail_version = 'DRAFT'
     return apply_guardrail(text, guardrail_id, guardrail_version)
 
 
