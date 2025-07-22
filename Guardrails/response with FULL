@@ -1,0 +1,252 @@
+{
+  "ResponseMetadata": {
+    "RequestId": "5e4e7daa-95eb-411f-baa0-e76e5520982a",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "date": "Tue, 22 Jul 2025 11:47:15 GMT",
+      "content-type": "application/json",
+      "content-length": "3636",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "5e4e7daa-95eb-411f-baa0-e76e5520982a"
+    },
+    "RetryAttempts": 0
+  },
+  "usage": {
+    "topicPolicyUnits": 0,
+    "contentPolicyUnits": 0,
+    "wordPolicyUnits": 0,
+    "sensitiveInformationPolicyUnits": 1,
+    "sensitiveInformationPolicyFreeUnits": 0,
+    "contextualGroundingPolicyUnits": 0
+  },
+  "action": "GUARDRAIL_INTERVENED",
+  "actionReason": "Guardrail masked.",
+  "outputs": [
+    {
+      "text": "My name is {NAME}. I work for Softwire at {ADDRESS}. My phone number is {PHONE} and my email address is {EMAIL}. You can also reach me on {EMAIL}. I log in using {USERNAME} and use {PASSWORD} as my password."
+    }
+  ],
+  "assessments": [
+    {
+      "sensitiveInformationPolicy": {
+        "piiEntities": [
+          {
+            "match": "James",
+            "type": "NAME",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match": "62-64 Hills Road, Cambridge, CB2 1LA",
+            "type": "ADDRESS",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match": "07382594632",
+            "type": "PHONE",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match": "james.ireland@softwire.com",
+            "type": "EMAIL",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match": "james.ireland at softwire.com",
+            "type": "EMAIL",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match": "jamireadmin",
+            "type": "USERNAME",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match":"fhGtjdH4897",
+            "type": "PASSWORD",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match": "",
+            "type": "AGE",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "DRIVER_ID",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "LICENSE_PLATE",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "VEHICLE_IDENTIFICATION_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "CREDIT_DEBIT_CARD_CVV",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "CREDIT_DEBIT_CARD_EXPIRY",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "CREDIT_DEBIT_CARD_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "PIN",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "INTERNATIONAL_BANK_ACCOUNT_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "SWIFT_CODE",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "IP_ADDRESS",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "MAC_ADDRESS",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "URL",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "AWS_ACCESS_KEY",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "AWS_SECRET_KEY",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "US_BANK_ACCOUNT_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "US_BANK_ROUTING_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "US_PASSPORT_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "US_SOCIAL_SECURITY_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "CA_HEALTH_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "CA_SOCIAL_INSURANCE_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match"": "\"",
+            "type": "UK_NATIONAL_HEALTH_SERVICE_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "UK_NATIONAL_INSURANCE_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          },
+          {
+            "match": "",
+            "type": "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER",
+            "action": "NONE",
+            "detected": "False"
+          }
+        ]
+      },
+      "invocationMetrics": {
+        "guardrailProcessingLatency": 205,
+        "usage": {
+          "topicPolicyUnits": 0,
+          "contentPolicyUnits": 0,
+          "wordPolicyUnits": 0,
+          "sensitiveInformationPolicyUnits": 1,
+          "sensitiveInformationPolicyFreeUnits": 0,
+          "contextualGroundingPolicyUnits": 0
+        },
+        "guardrailCoverage": {
+          "textCharacters": {
+            "guarded": 280,
+            "total": 280
+          }
+        }
+      }
+    }
+  ],
+  "guardrailCoverage": {
+    "textCharacters": {
+      "guarded": 280,
+      "total": 280
+    }
+  }
+}

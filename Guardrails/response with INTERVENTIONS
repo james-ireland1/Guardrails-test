@@ -1,0 +1,102 @@
+{
+  "ResponseMetadata": {
+    "RequestId": "88feb41b-5391-4bc2-a6fc-133a035153c8",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "date": "Tue, 22 Jul 2025 11:45:30 GMT",
+      "content-type": "application/json",
+      "content-length": "1751",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "88feb41b-5391-4bc2-a6fc-133a035153c8"
+    },
+    "RetryAttempts": 0
+  },
+  "usage": {
+    "topicPolicyUnits": 0,
+    "contentPolicyUnits": 0,
+    "wordPolicyUnits": 0,
+    "sensitiveInformationPolicyUnits": 1,
+    "sensitiveInformationPolicyFreeUnits": 0,
+    "contextualGroundingPolicyUnits": 0
+  },
+  "action": "GUARDRAIL_INTERVENED",
+  "actionReason": "Guardrail masked.",
+  "outputs": [
+    {
+      "text": "My name is {NAME}. I work for Softwire at {ADDRESS}. My phone number is {PHONE} and my email address is {EMAIL}. You can also reach me on {EMAIL}. I log in using {USERNAME} and use {PASSWORD} as my password."
+    }
+  ],
+  "assessments": [
+    {
+      "sensitiveInformationPolicy": {
+        "piiEntities": [
+          {
+            "match": "James",
+            "type": "NAME",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match": "62-64 Hills Road, Cambridge, CB2 1LA",
+            "type": "ADDRESS",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match": "07382594632",
+            "type": "PHONE",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match": "james.ireland@softwire.com",
+            "type": "EMAIL",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match": "james.ireland at softwire.com",
+            "type": "EMAIL",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match": "jamireadmin",
+            "type": "USERNAME",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          },
+          {
+            "match": "fhGtjdH4897",
+            "type": "PASSWORD",
+            "action": "ANONYMIZED",
+            "detected": "True"
+          }
+        ]
+      },
+      "invocationMetrics": {
+        "guardrailProcessingLatency": 198,
+        "usage": {
+          "topicPolicyUnits": 0,
+          "contentPolicyUnits": 0,
+          "wordPolicyUnits": 0,
+          "sensitiveInformationPolicyUnits": 1,
+          "sensitiveInformationPolicyFreeUnits": 0,
+          "contextualGroundingPolicyUnits": 0
+        },
+        "guardrailCoverage": {
+          "textCharacters": {
+            "guarded": 280,
+            "total": 280
+          }
+        }
+      }
+    }
+  ],
+  "guardrailCoverage": {
+    "textCharacters": {
+      "guarded": 280,
+      "total": 280
+    }
+  }
+}
